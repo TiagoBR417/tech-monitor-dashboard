@@ -7,7 +7,7 @@ Um dashboard full-stack para monitoramento de hardware em tempo real, construíd
 ![Chart.js](https://img.shields.io/badge/Chart.js-Frontend-blue)
 
 ## 🚀 O Projeto
-Desenvolvido para apresentar habilidades de integração entre backend e sistema operacional durante o **Feirão de Empregos Eniac**. A aplicação consome dados vitais do hardware (CPU, RAM, GPU, Disco e S.O.) e os exibe em uma interface limpa, com Dark Mode e gráficos reativos a cada 2 segundos.
+Desenvolvido para apresentar habilidades de integração entre backend e sistema operacional. A aplicação consome dados vitais do hardware (CPU, RAM, GPU, Disco e S.O.) e os exibe em uma interface limpa, com Dark Mode e gráficos reativos a cada 2 segundos.
 
 ## 🧠 Arquitetura e Diferenciais Técnicos
 
