@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Tech Monitor Dashboard Pro</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            background: #121212; 
+            color: white; 
+            font-family: 'Segoe UI', Tahoma, sans-serif; 
+            margin: 0; 
+            padding: 40px; 
+            overflow-x: hidden;
+        }
+
+
+        .container { 
+            max-width: 1200px; 
+            margin: auto; 
+            text-align: center; 
+        }
+        
+
+        .header {
+            margin-bottom: 50px;
+        }
+        .header h1 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-top: 0;
+            color: white;
+            font-weight: 300; 
+        }
+        .header h1 span {
+            font-weight: bold;
+            color: #00ff88; 
+        }
+        .header p {
+            text-align: center;
+            color: #888;
+            margin-top: -10px;
+            font-size: 1.1rem;
+        }
+
+        .dashboard-cards { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 25px; /* Aumentado gap */
+            margin-bottom: 50px; 
+        }
+        .card { 
+            background: rgba(30, 30, 30, 0.85); 
+            backdrop-filter: blur(5px); 
+            padding: 25px; 
+            border-radius: 12px; 
+            flex: 1; 
+            min-width: 250px; 
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.05); 
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-3px); } 
+
+        .card h3 { margin-top: 0; color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; }
+        .card p { margin: 8px 0; font-size: 17px; font-weight: bold; }
+        .card span { font-size: 14px; font-weight: normal; color: #666; }
+        
+        .p-cpu { color: #00ff88; }
+        .p-gpu { color: #00d2ff; }
+        .p-ram { color: #bb86fc; }
+        .p-os  { color: #ffaa00; }
+
+        .charts-container { 
+            display: flex; 
+            gap: 30px; 
+            flex-wrap: wrap; 
+        }
+        .chart-box { 
+            background: rgba(30, 30, 30, 0.85); 
+            backdrop-filter: blur(5px);
+            border-radius: 12px; 
+            padding: 20px; 
+            flex: 2; 
+            min-width: 300px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .chart-box.small { flex: 1; min-width: 280px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚡ Tech <span>Monitor</span> Dashboard</h1>
+            <p>Monitoramento completo em tempo real</p>
+        </div>
+        
+        <div class="dashboard-cards">
+            <div class="card">
+                <h3>Processador</h3>
+                <p id="cpu-name" class="p-cpu">Analisando...</p>
+                <span id="cpu-cores">Núcleos: -</span>
+            </div>
+            <div class="card">
+                <h3>Placa de Vídeo</h3>
+                <p id="gpu-name" class="p-gpu">Analisando...</p>
+            </div>
+            <div class="card">
+                <h3>Memória RAM Física</h3>
+                <p id="ram-total" class="p-ram">Analisando...</p>
+                <span id="ram-type">Tipo: -</span>
+            </div>
+            <div class="card">
+                <h3>Sistema</h3>
+                <p id="os-name" class="p-os">Analisando...</p>
+                <span id="uptime">Ligado: - hrs</span>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-box">
+                <canvas id="meuGrafico"></canvas>
+            </div>
+            <div class="chart-box small">
+                <h3 style="color: #ff3366; text-align: left; margin-top: 0; font-size: 12px; text-transform: uppercase;">Armazenamento (C:)</h3>
+                <canvas id="discoGrafico"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
